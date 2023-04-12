@@ -1,0 +1,117 @@
+function x()
+{
+
+	var canvas=document.getElementById('miejsce');
+	var ob = canvas.getContext('2d');
+	
+	var wybor=document.getElementById('wybor').value;
+	var cos = "stroke()";
+	
+	
+	
+	switch(wybor)
+	{
+		case "niebo": var grd1=ob.createLinearGradient(540,320,800,600);
+					grd1.addColorStop(0,"#404040");
+					grd1.addColorStop(1,"orange");
+	
+					var grd=ob.createRadialGradient(600,580,150,600,680,50);
+					grd.addColorStop(0,"orange");
+					grd.addColorStop(1,"red");
+    
+    
+					ob.fillStyle="#404040"
+					ob.fillRect(0,0,800,600);
+	
+					ob.beginPath()
+					ob.moveTo(220,600);
+					ob.lineTo(800,0);
+					ob.lineTo(800,600);
+					ob.fillStyle=grd1;
+					ob.fill();
+					
+					 ob.beginPath();
+						ob.arc(600,580,150,150*Math.PI/180,50*Math.PI/180);
+						ob.fillStyle=grd;
+						ob.fill();
+					break;
+					
+		case "Księżyc":   	ob.beginPath();
+							ob.arc(50,50,40,90*Math.PI/180,270*Math.PI/180);
+							ob.fillStyle="YELLOW"
+							ob.fill();
+							break;
+							
+		case "Trawa":   
+						ob.beginPath();
+						ob.moveTo(0,580);
+						ob.lineTo(800,580);
+						ob.lineTo(800,600);
+						ob.lineTo(0,600);
+						ob.fillStyle="GREEN";
+						ob.fill();
+						break;
+							
+		case "Dom": 		ob.beginPath();
+							ob.moveTo(100,600);
+							ob.lineTo(100,400);
+							ob.lineTo(400,400);
+							ob.lineTo(400,600);
+							ob.fillStyle="#996600";
+							ob.fill();
+							break;
+							
+		case "Dach": 		ob.beginPath();
+							ob.moveTo(400,400);
+							ob.lineTo(300,320);
+							ob.lineTo(210,320);
+							ob.lineTo(100,400);
+							ob.fillStyle="#990000";
+							ob.fill();
+							break;
+							
+		case "Okna":        ob.beginPath();
+							ob.moveTo(125,450);
+							ob.lineTo(125,500);
+							ob.lineTo(200,500);
+							ob.lineTo(200,450);
+							ob.lineTo(125,450);
+							ob.fillStyle='rgb(100,100,255)';
+							ob.fill();
+    
+    
+							ob.beginPath();
+							ob.moveTo(375,450);
+							ob.lineTo(375,500);
+							ob.lineTo(300,500);
+							ob.lineTo(300,450);
+							ob.lineTo(125,450);
+							ob.fillStyle='rgb(100,100,255)';
+							ob.fill();
+							break;
+							
+							
+		case "Drzwi":		  	ob.beginPath();
+								ob.moveTo(220,600);
+								ob.lineTo(220,520);
+								ob.lineTo(280,520);
+								ob.lineTo(280,600);
+								ob.fillStyle="brown";
+								ob.fill();
+								break;
+								
+		case "Napis":			
+		
+								ob.beginPath();
+								ob.fillStyle="rgba(255,255,255,0.5)";
+								ob.font="50px Console";
+								ob.fillText("Patrycja Zuber 'smoking chmod'",100,300);
+								
+								
+								ob.beginPath();
+								ob.strokeStyle='rgba(255,0,0,0.7)';
+								ob.font="50px Console";
+								ob.strokeText("Patrycja Zuber 'smoking chmod'",100,300);
+								break;
+	}
+}
