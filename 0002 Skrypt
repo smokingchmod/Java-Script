@@ -1,0 +1,260 @@
+function x()
+{
+
+	var canvas=document.getElementById('miejsce');
+	var ob = canvas.getContext('2d');
+	
+	var niebo1 = document.getElementById('niebo1').value;
+    var niebo2 = document.getElementById('niebo2').value;
+    
+    var mstyle = document.getElementById('mstyle').value;
+    var mkol = document.getElementById('mkol').value;
+    
+    var grastyle = document.getElementById('grastyle').value;
+    var graskolor = document.getElementById('graskolor').value;
+    
+    var hstyle = document.getElementById('hstyle').value;
+    var hkolor = document.getElementById('hkolor').value;
+    
+    var dstyle = document.getElementById('dstyle').value;
+    var dkolor = document.getElementById('dkolor').value;
+    
+    var wstyle = document.getElementById('wstyle').value;
+    var wkolor = document.getElementById('wkolor').value;
+    
+    var dostyle = document.getElementById('dostyle').value;
+    var dokolor = document.getElementById('dokolor').value;
+    
+    var nstyle = document.getElementById('nstyle').value;
+    var nkolor = document.getElementById('nkolor').value;
+	var ziemniak = document.getElementById('ziemniak').value;
+    
+
+	
+	
+	//niebo 
+    
+        var grd1=ob.createLinearGradient(540,320,800,600);
+					grd1.addColorStop(0,niebo1);
+					grd1.addColorStop(1,niebo2);
+	
+					var grd=ob.createRadialGradient(600,580,150,600,680,50);
+					grd.addColorStop(0,niebo1);
+					grd.addColorStop(1,niebo2);
+    
+    
+					ob.fillStyle=niebo1;
+					ob.fillRect(0,0,800,600);
+	
+					ob.beginPath()
+					ob.moveTo(220,600);
+					ob.lineTo(800,0);
+					ob.lineTo(800,600);
+					ob.fillStyle=grd1;
+					ob.fill();
+					
+					 ob.beginPath();
+						ob.arc(600,580,150,150*Math.PI/180,50*Math.PI/180);
+						ob.fillStyle=grd;
+						ob.fill();
+		
+    
+    
+    
+    
+    
+    //księżyc
+    
+    if(mstyle=="linia")
+        {
+     ob.beginPath();
+        ob.arc(50,50,40,90*Math.PI/180,270*Math.PI/180);
+        ob.strokeStyle=mkol;
+        ob.stroke();
+        }
+    if(mstyle=="pelny")
+        {
+             ob.beginPath();
+				ob.arc(50,50,40,90*Math.PI/180,270*Math.PI/180);
+				ob.fillStyle=mkol;
+				ob.fill();
+						
+        }
+    
+    //trawa 
+    
+	
+    if(grastyle=="linia")
+        
+        {
+        ob.beginPath();
+            ob.moveTo(0,580);
+            ob.lineTo(800,580);
+            ob.lineTo(800,600);
+            ob.lineTo(0,600)
+        ob.strokeStyle=graskolor;
+        ob.stroke();
+        }
+    
+    if(grastyle=="pelny")
+        {
+            ob.beginPath();
+						ob.moveTo(0,580);
+						ob.lineTo(800,580);
+						ob.lineTo(800,600);
+						ob.lineTo(0,600)
+				ob.fillStyle=graskolor;
+				ob.fill();
+						
+        }
+    
+    
+    //haupka
+    
+     if(hstyle=="linia")
+        
+        {
+        ob.beginPath();
+            ob.moveTo(100,600);
+            ob.lineTo(100,400);
+            ob.lineTo(400,400);
+            ob.lineTo(400,600);
+        ob.strokeStyle=hkolor;
+        ob.stroke();
+        }
+    
+    if(hstyle=="pelny")
+        {
+             ob.beginPath();
+            ob.moveTo(100,600);
+            ob.lineTo(100,400);
+            ob.lineTo(400,400);
+            ob.lineTo(400,600);
+				ob.fillStyle=hkolor;
+				ob.fill();
+						
+        }
+    
+    
+    //dach
+    
+         if(dstyle=="linia")
+        
+        {
+        ob.beginPath();
+            ob.moveTo(400,400);
+            ob.lineTo(300,320);
+            ob.lineTo(210,320);
+            ob.lineTo(100,400);
+        ob.strokeStyle=dkolor;
+        ob.stroke();
+        }
+    
+    if(dstyle=="pelny")
+        {
+             ob.beginPath();
+            ob.moveTo(400,400);
+            ob.lineTo(300,320);
+            ob.lineTo(210,320);
+            ob.lineTo(100,400);
+				ob.fillStyle=dkolor;
+				ob.fill();
+						
+        }
+    
+    //okienka
+    
+             if(wstyle=="linia")
+        
+        {
+        ob.beginPath();
+            ob.moveTo(125,450);
+				ob.lineTo(125,500);
+				ob.lineTo(200,500);
+				ob.lineTo(200,450);
+				ob.lineTo(125,450);
+        ob.strokeStyle=wkolor;
+        ob.stroke();
+            
+            
+         ob.beginPath();
+            ob.moveTo(375,450);
+				ob.lineTo(375,500);
+				ob.lineTo(300,500);
+				ob.lineTo(300,450);
+				ob.lineTo(375,450);
+        ob.strokeStyle=wkolor;
+        ob.stroke();    
+        }
+    
+    if(wstyle=="pelny")
+        {
+             ob.beginPath();
+            ob.moveTo(125,450);
+				ob.lineTo(125,500);
+				ob.lineTo(200,500);
+				ob.lineTo(200,450);
+				ob.lineTo(125,450);
+        ob.fillStyle=wkolor;
+        ob.fill();
+            
+            
+         ob.beginPath();
+            ob.moveTo(375,450);
+				ob.lineTo(375,500);
+				ob.lineTo(300,500);
+				ob.lineTo(300,450);
+				ob.lineTo(125,450);
+        ob.fillStyle=wkolor;
+        ob.fill();    
+						
+        }
+
+    //drzwi
+            if(dostyle=="linia")
+        
+        {
+        ob.beginPath();
+            ob.moveTo(220,600);
+				ob.lineTo(220,520);
+				ob.lineTo(280,520);
+				ob.lineTo(280,600);
+        ob.strokeStyle=dokolor;
+        ob.stroke();
+        }
+    
+    if(dostyle=="pelny")
+        {
+             ob.beginPath();
+            ob.moveTo(220,600);
+				ob.lineTo(220,520);
+				ob.lineTo(280,520);
+				ob.lineTo(280,600);
+				ob.fillStyle=dokolor;
+				ob.fill();
+						
+        }
+    
+    
+    //napis
+    
+    if(nstyle=="linia")
+        
+        {
+        ob.beginPath();
+        ob.strokeStyle=nkolor;
+       ob.font="50px Console";
+            ob.strokeText(ziemniak,100,300);
+        }
+    
+    if(nstyle=="pelny")
+        {
+             ob.beginPath();
+				ob.fillStyle=nkolor;
+				ob.font="50px Console";
+				ob.fillText(ziemniak,100,300);
+        }
+		
+	
+  
+}
